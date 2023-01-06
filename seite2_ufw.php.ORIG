@@ -1,0 +1,9 @@
+<?php
+$src_ip = $_POST["src_ip"];
+echo "You are searching for blocked ports from source IP: $src_ip";
+
+echo "Lists the blocked ports from source IP addresses from UFW"; 
+$result1 = shell_exec('sudo /var/www/scripts/php_ufw_list_blocked_ports_for_specific_ip.sh "$src_ip"');
+
+echo "<pre>$result1</pre>";
+?>
